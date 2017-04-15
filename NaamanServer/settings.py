@@ -9,6 +9,8 @@ https://docs.djangoproject.com/en/1.11/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.11/ref/settings/
 """
+# import mimetypes
+# mimetypes.add_type("text/css", ".css", True)
 
 import os
 
@@ -16,17 +18,20 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'xprvv*-p2+m=6!25vv__sb$p#44oq#ml#dqqe!#7a0pn3=2p)='
+SECRET_KEY = 'z5cd0a_of*s)(oswgw-97oj!65cng^p$k0(28c@bao_!zzincq'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = [u'10.0.0.8',
+                 u'169.254.249.28',
+                 u'127.0.0.1',
+                 u'0.0.0.0']
 
 # Application definition
 
@@ -51,10 +56,11 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'NaamanServer.urls'
 
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'static')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -117,4 +123,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
+STATIC_ROOT = ''
+
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = ( os.path.join('static'), )
+
