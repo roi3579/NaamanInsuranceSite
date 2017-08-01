@@ -32,7 +32,8 @@ ALLOWED_HOSTS = [u'10.0.0.8',
                  u'169.254.249.28',
                  u'127.0.0.1',
                  u'0.0.0.0',
-                 u'www.naaman-ins.com'
+                 u'www.naaman-ins.com',
+                 'www.naaman-ins.com'
                  'stark-escarpment-54917.herokuapp.com']
 
 # Application definition
